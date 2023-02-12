@@ -1,0 +1,14 @@
+name: chrome-shell
+version: 0.1.0
+
+description: A native messaging host for executing shell commands.
+
+authors: ["Mathieu Ablasou <taupiqueur.kanto@gmail.com>"]
+
+crystal: 1.7.0
+
+license: MIT
+
+targets:
+  chrome-shell:
+    main: src/main.cr

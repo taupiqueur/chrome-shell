@@ -1,0 +1,13 @@
+{
+  "name": "Hello, World!",
+  "version": "0.1.0",
+  "description": "Native messaging example extension.",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["nativeMessaging"],
+  "action": {
+    "default_title": "Click to send a message"
+  }
+}

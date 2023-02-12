@@ -1,0 +1,13 @@
+{
+  "name": "dmenu",
+  "version": "0.1.0",
+  "description": "Switch tabs with dmenu.",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["nativeMessaging", "tabs"],
+  "action": {
+    "default_title": "Switch tabs with dmenu"
+  }
+}

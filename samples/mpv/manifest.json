@@ -1,0 +1,13 @@
+{
+  "name": "mpv",
+  "version": "0.1.0",
+  "description": "Open videos in webpages with mpv.",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "nativeMessaging"],
+  "action": {
+    "default_title": "Open with mpv"
+  }
+}
