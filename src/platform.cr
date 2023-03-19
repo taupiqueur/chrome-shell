@@ -26,7 +26,7 @@ enum Platform
   end
 
   # Returns the native manifest directory.
-  # Reference: https://developer.chrome.com/docs/apps/nativeMessaging/#native-messaging-host-location
+  # Reference: https://developer.chrome.com/docs/extensions/mv3/nativeMessaging/#native-messaging-host-location
   def native_manifest_dir : Path
     user_data_dir / "NativeMessagingHosts"
   end

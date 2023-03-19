@@ -1,5 +1,5 @@
 # This class provides the functionality to transport messages over stdio.
-# Native messaging protocol: https://developer.chrome.com/docs/apps/nativeMessaging/#native-messaging-host-protocol
+# Native messaging protocol: https://developer.chrome.com/docs/extensions/mv3/nativeMessaging/#native-messaging-host-protocol
 class Transport
   # Creates a native messaging connection via stdio.
   def self.start(input_stream : Channel, output_stream : Channel)

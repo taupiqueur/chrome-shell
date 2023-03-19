@@ -1,7 +1,7 @@
 require "json"
 
 # Struct representing a native manifest.
-# Reference: https://developer.chrome.com/docs/apps/nativeMessaging/#native-messaging-host
+# Reference: https://developer.chrome.com/docs/extensions/mv3/nativeMessaging/#native-messaging-host
 struct Manifest
   include JSON::Serializable
 
