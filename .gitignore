@@ -1,2 +1,4 @@
 bin
 releases
+extra/man/chrome-shell.1.gz
+extra/man/chrome-shell.1.html

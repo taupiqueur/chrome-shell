@@ -1,0 +1,87 @@
+.Dd January 4, 2023
+.Dt CHROME-SHELL 1
+.Os
+.Sh NAME
+.Nm chrome-shell
+.Nd A native messaging host for executing shell commands.
+.Sh SYNOPSIS
+.Nm
+.Op Ar options
+.Op Ar command
+.Sh DESCRIPTION
+.Nm
+is a native messaging host for executing shell commands.
+.Sh USAGE
+If no
+.Ar command
+is specified, the
+.Cm run
+command is assumed.
+.Ss Allow extensions to communicate with the shell application
+Copy the extension IDs you want to register in the manifest and run the following in your terminal.
+.Bd -ragged -offset indent
+.Nm
+.Cm install
+.Op Fl -target Ns = Ns Ar platform
+.Op Ar extension_ids
+.Ed
+.Pp
+Possible targets are
+.Cm chrome ,
+.Cm chrome-dev ,
+.Cm chrome-beta ,
+.Cm chrome-canary
+and
+.Cm chromium .
+.Ss Revoke all permissions
+Simply uninstall the manifest.
+.Bd -ragged -offset indent
+.Nm
+.Cm uninstall
+.Ed
+.Sh COMMANDS
+The commands are as follows:
+.Bl -tag -width indent
+.It Cm run
+Run server.
+.It Cm install
+Install manifest and register specified extensions.
+.Pp
+Accepts a list of extension ID values.
+Each value represents an extension which is allowed to communicate with this native application.
+.It Cm uninstall
+Uninstall manifest.
+.El
+.Sh OPTIONS
+The options are as follows:
+.Bl -tag -width indent
+.It Fl -target Ns = Ns Ar platform
+Specifies the target
+.Ar platform .
+.Pp
+Possible values are
+.Cm chrome ,
+.Cm chrome-dev ,
+.Cm chrome-beta ,
+.Cm chrome-canary
+and
+.Cm chromium .
+.Pp
+Default is
+.Cm chrome .
+.It Fl h , Fl -help
+Show this help.
+.It Fl v , Fl -version
+Show version.
+.El
+.Sh CONTRIBUTING
+.Bl -tag -width indent
+.It Report bugs on the
+.Lk https://github.com/taupiqueur/chrome-shell/issues issue tracker ,
+.It ask questions on the
+.Lk https://web.libera.chat/gamja/#taupiqueur IRC channel ,
+.It send patches on the
+.Lk https://github.com/taupiqueur/chrome-shell/pulls mailing list .
+.El
+.Sh AUTHORS
+.An Mathieu Ablasou Aq Mt taupiqueur.kanto@gmail.com

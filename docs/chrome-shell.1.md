@@ -18,6 +18,8 @@ chrome-shell is a native messaging host for executing shell commands.
 
 ## Usage
 
+If no command is specified, the `run` command is assumed.
+
 ### Allow extensions to communicate with the shell application
 
 Copy the extension IDs you want to register in the manifest and run the following in your terminal.
@@ -38,7 +40,7 @@ chrome-shell uninstall
 
 ## Commands
 
-Default is `run`.
+The commands are as follows:
 
 ###### `run`
 
@@ -56,6 +58,8 @@ Each value represents an extension which is allowed to communicate with this nat
 Uninstall manifest.
 
 ## Options
+
+The options are as follows:
 
 ###### `--target=<platform>`
 
