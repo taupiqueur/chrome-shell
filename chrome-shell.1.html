@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="man-style.css" type="text/css" media="all"/>
+  <title>CHROME-SHELL(1)</title>
+</head>
+<body>
+<table class="head">
+  <tr>
+    <td class="head-ltitle">CHROME-SHELL(1)</td>
+    <td class="head-vol">General Commands Manual</td>
+    <td class="head-rtitle">CHROME-SHELL(1)</td>
+  </tr>
+</table>
+<div class="manual-text">
+<section class="Sh">
+<h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<p class="Pp"><code class="Nm">chrome-shell</code> &#x2014; <span class="Nd">A
+    native messaging host for executing shell commands.</span></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<table class="Nm">
+  <tr>
+    <td><code class="Nm">chrome-shell</code></td>
+    <td>[<var class="Ar">options</var>] [<var class="Ar">command</var>]</td>
+  </tr>
+</table>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<p class="Pp"><code class="Nm">chrome-shell</code> is a native messaging host
+    for executing shell commands.</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="USAGE"><a class="permalink" href="#USAGE">USAGE</a></h1>
+<p class="Pp">If no <var class="Ar">command</var> is specified, the
+    <code class="Cm">run</code> command is assumed.</p>
+<section class="Ss">
+<h2 class="Ss" id="Allow_extensions_to_communicate_with_the_shell_application"><a class="permalink" href="#Allow_extensions_to_communicate_with_the_shell_application">Allow
+  extensions to communicate with the shell application</a></h2>
+<p class="Pp">Copy the extension IDs you want to register in the manifest and
+    run the following in your terminal.</p>
+<div class="Bd Pp Bd-indent"><code class="Nm">chrome-shell</code>
+  <code class="Cm">install</code>
+  [<code class="Fl">--target</code>=<var class="Ar">platform</var>]
+  [<var class="Ar">extension_ids</var>]</div>
+<p class="Pp">Possible targets are <code class="Cm">chrome</code>,
+    <code class="Cm">chrome-dev</code>, <code class="Cm">chrome-beta</code>,
+    <code class="Cm">chrome-canary</code> and
+  <code class="Cm">chromium</code>.</p>
+</section>
+<section class="Ss">
+<h2 class="Ss" id="Revoke_all_permissions"><a class="permalink" href="#Revoke_all_permissions">Revoke
+  all permissions</a></h2>
+<p class="Pp">Simply uninstall the manifest.</p>
+<div class="Bd Pp Bd-indent"><code class="Nm">chrome-shell</code>
+  <code class="Cm">uninstall</code></div>
+</section>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="COMMANDS"><a class="permalink" href="#COMMANDS">COMMANDS</a></h1>
+<p class="Pp">The commands are as follows:</p>
+<dl class="Bl-tag">
+  <dt id="run"><a class="permalink" href="#run"><code class="Cm">run</code></a></dt>
+  <dd>Run server.</dd>
+  <dt id="install"><a class="permalink" href="#install"><code class="Cm">install</code></a></dt>
+  <dd>Install manifest and register specified extensions.
+    <p class="Pp">Accepts a list of extension ID values. Each value represents
+        an extension which is allowed to communicate with this native
+        application.</p>
+  </dd>
+  <dt id="uninstall"><a class="permalink" href="#uninstall"><code class="Cm">uninstall</code></a></dt>
+  <dd>Uninstall manifest.</dd>
+</dl>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="OPTIONS"><a class="permalink" href="#OPTIONS">OPTIONS</a></h1>
+<p class="Pp">The options are as follows:</p>
+<dl class="Bl-tag">
+  <dt id="target"><a class="permalink" href="#target"><code class="Fl">--target</code></a>=<var class="Ar">platform</var></dt>
+  <dd>Specifies the target <var class="Ar">platform</var>.
+    <p class="Pp">Possible values are <code class="Cm">chrome</code>,
+        <code class="Cm">chrome-dev</code>, <code class="Cm">chrome-beta</code>,
+        <code class="Cm">chrome-canary</code> and
+        <code class="Cm">chromium</code>.</p>
+    <p class="Pp">Default is <code class="Cm">chrome</code>.</p>
+  </dd>
+  <dt id="h"><a class="permalink" href="#h"><code class="Fl">-h</code></a>,
+    <code class="Fl">--help</code></dt>
+  <dd>Show this help.</dd>
+  <dt id="v"><a class="permalink" href="#v"><code class="Fl">-v</code></a>,
+    <code class="Fl">--version</code></dt>
+  <dd>Show version.</dd>
+</dl>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="CONTRIBUTING"><a class="permalink" href="#CONTRIBUTING">CONTRIBUTING</a></h1>
+<dl class="Bl-tag">
+  <dt>Report bugs on the</dt>
+  <dd><a class="Lk" href="https://github.com/taupiqueur/chrome-shell/issues">issue
+      tracker</a>,</dd>
+  <dt>ask questions on the</dt>
+  <dd><a class="Lk" href="https://web.libera.chat/gamja/#taupiqueur">IRC
+      channel</a>,</dd>
+  <dt>send patches on the</dt>
+  <dd><a class="Lk" href="https://github.com/taupiqueur/chrome-shell/pulls">mailing
+      list</a>.</dd>
+</dl>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="AUTHORS"><a class="permalink" href="#AUTHORS">AUTHORS</a></h1>
+<p class="Pp"><span class="An">Mathieu Ablasou</span>
+    &lt;<a class="Mt" href="mailto:taupiqueur.kanto@gmail.com">taupiqueur.kanto@gmail.com</a>&gt;</p>
+</section>
+</div>
+<table class="foot">
+  <tr>
+    <td class="foot-date">January 4, 2023</td>
+    <td class="foot-os"></td>
+  </tr>
+</table>
+</body>
+</html>
