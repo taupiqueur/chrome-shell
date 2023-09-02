@@ -20,7 +20,7 @@ test:
 
 release: clean build
 	mkdir -p releases
-	tar caf releases/$(name)-$(version)-$(target).tar.xz bin/chrome-shell extra/man/chrome-shell.1.gz extra/shell-completion/chrome-shell.bash
+	tar caf releases/$(name)-$(version)-$(target).tar.xz bin/chrome-shell extra/man/chrome-shell.1.gz extra/shell-completion/chrome-shell.bash docs samples
 
 install: build
 	install -d ~/.local/bin ~/.local/share/man/man1 ~/.local/share/bash-completion/completions

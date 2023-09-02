@@ -78,3 +78,11 @@ Show this help.
 ###### `--version`
 
 Show version.
+
+## See also
+
+- [Your first extension],
+- [API reference].
+
+[Your first extension]: your-first-extension.md
+[API reference]: api.md
