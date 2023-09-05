@@ -74,3 +74,13 @@ Navigate back to the extension management page and click the **Reload** link.
 A new field, **Inspect views**, becomes available with a blue link, **service worker**.
 
 Click the link to view the service worker’s console log, “Hello, World!”.
+
+## What’s next?
+
+Here are a few places you may want to go next.
+
+- [Example extensions],
+- [API reference].
+
+[Example extensions]: ../samples
+[API reference]: api.md
