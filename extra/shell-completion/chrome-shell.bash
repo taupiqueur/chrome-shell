@@ -3,9 +3,11 @@ _chrome_shell() {
 '
   local OPTION_WORDLIST=(
     "--target="
+    "-v "
+    "--log="
     "-h "
     "--help "
-    "-v "
+    "-V "
     "--version "
   )
   local COMMAND_WORDLIST=(
@@ -44,6 +46,9 @@ _chrome_shell() {
         chrome_shell,--target,*)
           compgen -W "${PLATFORM_WORDLIST[*]}" -- "$2"
           ;;
+        chrome_shell,--log,*)
+          compgen -f -- "$2"
+          ;;
         chrome_shell,*,-*)
           compgen -W "${OPTION_WORDLIST[*]}" -- "$2"
           ;;
@@ -54,6 +59,9 @@ _chrome_shell() {
         chrome_shell_run,--target,*)
           compgen -W "${PLATFORM_WORDLIST[*]}" -- "$2"
           ;;
+        chrome_shell_run,--log,*)
+          compgen -f -- "$2"
+          ;;
         chrome_shell_run,*,-*)
           compgen -W "${OPTION_WORDLIST[*]}" -- "$2"
           ;;
@@ -61,12 +69,18 @@ _chrome_shell() {
         chrome_shell_install,--target,*)
           compgen -W "${PLATFORM_WORDLIST[*]}" -- "$2"
           ;;
+        chrome_shell_install,--log,*)
+          compgen -f -- "$2"
+          ;;
         chrome_shell_install,*,-*)
           compgen -W "${OPTION_WORDLIST[*]}" -- "$2"
           ;;
 
         chrome_shell_uninstall,--target,*)
           compgen -W "${PLATFORM_WORDLIST[*]}" -- "$2"
+          ;;
+        chrome_shell_uninstall,--log,*)
+          compgen -f -- "$2"
           ;;
         chrome_shell_uninstall,*,-*)
           compgen -W "${OPTION_WORDLIST[*]}" -- "$2"

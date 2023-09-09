@@ -69,12 +69,22 @@ Possible values are `chrome`, `chrome-dev`, `chrome-beta`, `chrome-canary` and `
 
 Default is `chrome`.
 
+###### `-v`
+
+Increases the level of verbosity (the max level is `-vvv`).
+
+###### `--log=<file>`
+
+Specifies the file to use for logging.
+
+Default is **stderr**.
+
 ###### `-h`
 ###### `--help`
 
 Show this help.
 
-###### `-v`
+###### `-V`
 ###### `--version`
 
 Show version.

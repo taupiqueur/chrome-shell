@@ -22,6 +22,10 @@ class Installer
     File.open(manifest_path, "w") do |file|
       manifest.to_json(file)
     end
+    Log.info &.emit(
+      "Manifest installed",
+      manifest_path: manifest_path.to_s
+    )
   end
 
   def merge_manifest(manifest_path : Path = manifest_path)
@@ -33,5 +37,9 @@ class Installer
 
   def uninstall_manifest(manifest_path : Path = manifest_path)
     File.delete(manifest_path)
+    Log.info &.emit(
+      "Manifest uninstalled",
+      manifest_path: manifest_path.to_s
+    )
   end
 end

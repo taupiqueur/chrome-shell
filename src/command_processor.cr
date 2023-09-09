@@ -37,6 +37,10 @@ class CommandProcessor
   def self.process(input_stream : Channel(Command), output_stream : Channel(CommandResult))
     loop do
       command = input_stream.receive
+      Log.info &.emit(
+        "Received command",
+        command: command.to_json
+      )
       spawn(name: "command processor") do
         # Standard streams
         stdin = IO::Memory.new
@@ -58,13 +62,18 @@ class CommandProcessor
           chdir: command.dir
         )
 
-        # Send the result.
+        # Send the command result.
+        command_result = CommandResult.new(
+          command_status.exit_code,
+          stdout.to_s,
+          stderr.to_s
+        )
+        Log.info &.emit(
+          "Sending command result",
+          command_result: command_result.to_json
+        )
         output_stream.send(
-          CommandResult.new(
-            command_status.exit_code,
-            stdout.to_s,
-            stderr.to_s
-          )
+          command_result
         )
       end
     end

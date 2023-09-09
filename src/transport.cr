@@ -15,6 +15,11 @@ class Transport
       bytes = server_input.read_bytes(Int32)
       sized_io = IO::Sized.new(server_input, read_size: bytes)
       message = Message.from_json(sized_io)
+      Log.info &.emit(
+        "Received message",
+        message_size: bytes,
+        message_content: message.to_json
+      )
       input_stream.send(message)
     end
   end
@@ -27,6 +32,11 @@ class Transport
       message = output_stream.receive
       encoded_message = message.to_json
       encoded_size = encoded_message.bytesize
+      Log.info &.emit(
+        "Sending message",
+        message_size: encoded_size,
+        message_content: encoded_message
+      )
       server_output.write_bytes(encoded_size)
       server_output << encoded_message
       server_output.flush
