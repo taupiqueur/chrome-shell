@@ -1,3 +1,4 @@
+complete -c chrome-shell -f
 complete -c chrome-shell -n "__fish_use_subcommand" -f -a "run" -d "Run server"
 complete -c chrome-shell -n "__fish_use_subcommand" -f -a "install" -d "Install manifest and register specified extensions"
 complete -c chrome-shell -n "__fish_use_subcommand" -f -a "uninstall" -d "Uninstall manifest"

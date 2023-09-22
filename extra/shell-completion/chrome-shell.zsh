@@ -32,4 +32,4 @@ _chrome_shell_platforms() {
   _values "platform" "${PLATFORM_WORDLIST[@]}"
 }
 
-_arguments -S -s "${OPTION_WORDLIST[@]}" "1:command:_chrome_shell_commands" "*:file:_files"
+_arguments -S -s "${OPTION_WORDLIST[@]}" "1:command:_chrome_shell_commands"
