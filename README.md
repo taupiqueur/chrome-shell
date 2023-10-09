@@ -29,6 +29,12 @@ See the [documentation index] for a complete reference.
 
 [Documentation index]: docs
 
+chrome-shell is also documented via man pages.
+For a list of available man pages,
+refer to `man -k chrome-shell` or [chrome-shell(1)].
+
+[chrome-shell(1)]: https://taupiqueur.github.io/chrome-shell/chrome-shell.1.html
+
 ## Contributing
 
 Report bugs on the [issue tracker],
