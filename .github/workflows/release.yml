@@ -38,9 +38,9 @@ jobs:
             os: macos-latest
             archive: chrome-shell-nightly-x86_64-apple-darwin.tar.xz
 
-          # - target: x86_64-pc-windows-msvc
-            # os: windows-latest
-            # archive: chrome-shell-nightly-x86_64-pc-windows-msvc.zip
+          - target: x86_64-pc-windows-msvc
+            os: windows-latest
+            archive: chrome-shell-nightly-x86_64-pc-windows-msvc.zip
 
     runs-on: ${{ matrix.os }}
     steps:
@@ -71,11 +71,11 @@ jobs:
         if: matrix.os == 'macos-latest'
         run: make release name=chrome-shell version=nightly target=${{ matrix.target }}
 
-      # - name: Build release (Windows)
-        # if: matrix.os == 'windows-latest'
-        # run: |
-          # shards build --release
-          # 7z a releases/${{ matrix.archive }} bin/chrome-shell.exe
+      - name: Build release (Windows)
+        if: matrix.os == 'windows-latest'
+        run: |
+          shards build --release
+          7z a releases/${{ matrix.archive }} bin/chrome-shell.exe
 
       - name: Upload release
         run: gh release upload nightly releases/${{ matrix.archive }}
