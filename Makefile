@@ -1,3 +1,5 @@
+PREFIX ?= $(HOME)/.local
+
 # General options
 name = chrome-shell
 version = $(shell git describe --tags --always)
@@ -23,15 +25,15 @@ release: clean build
 	tar caf releases/$(name)-$(version)-$(target).tar.xz bin/chrome-shell extra/man/chrome-shell.1.gz extra/shell-completion/chrome-shell.bash extra/shell-completion/chrome-shell.zsh extra/shell-completion/chrome-shell.fish docs samples
 
 install: build
-	install -d ~/.local/bin ~/.local/share/man/man1 ~/.local/share/bash-completion/completions ~/.local/share/zsh/site-functions ~/.local/share/fish/vendor_completions.d
-	install -m 0755 bin/chrome-shell ~/.local/bin
-	install -m 0644 extra/man/chrome-shell.1.gz ~/.local/share/man/man1
-	install -m 0644 extra/shell-completion/chrome-shell.bash ~/.local/share/bash-completion/completions
-	install -m 0644 extra/shell-completion/chrome-shell.zsh ~/.local/share/zsh/site-functions/_chrome-shell
-	install -m 0644 extra/shell-completion/chrome-shell.fish ~/.local/share/fish/vendor_completions.d
+	install -d $(DESTDIR)$(PREFIX)/bin $(DESTDIR)$(PREFIX)/share/man/man1 $(DESTDIR)$(PREFIX)/share/bash-completion/completions $(DESTDIR)$(PREFIX)/share/zsh/site-functions $(DESTDIR)$(PREFIX)/share/fish/vendor_completions.d
+	install -m 0755 bin/chrome-shell $(DESTDIR)$(PREFIX)/bin
+	install -m 0644 extra/man/chrome-shell.1.gz $(DESTDIR)$(PREFIX)/share/man/man1
+	install -m 0644 extra/shell-completion/chrome-shell.bash $(DESTDIR)$(PREFIX)/share/bash-completion/completions
+	install -m 0644 extra/shell-completion/chrome-shell.zsh $(DESTDIR)$(PREFIX)/share/zsh/site-functions/_chrome-shell
+	install -m 0644 extra/shell-completion/chrome-shell.fish $(DESTDIR)$(PREFIX)/share/fish/vendor_completions.d
 
 uninstall:
-	rm -f ~/.local/bin/chrome-shell ~/.local/share/man/man1/chrome-shell.1.gz ~/.local/share/bash-completion/completions/chrome-shell.bash ~/.local/share/zsh/site-functions/_chrome-shell ~/.local/share/fish/vendor_completions.d/chrome-shell.fish
+	rm -f $(DESTDIR)$(PREFIX)/bin/chrome-shell $(DESTDIR)$(PREFIX)/share/man/man1/chrome-shell.1.gz $(DESTDIR)$(PREFIX)/share/bash-completion/completions/chrome-shell.bash $(DESTDIR)$(PREFIX)/share/zsh/site-functions/_chrome-shell $(DESTDIR)$(PREFIX)/share/fish/vendor_completions.d/chrome-shell.fish
 
 clean:
 	git clean -d -f -X
