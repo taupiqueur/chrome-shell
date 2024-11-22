@@ -7,7 +7,7 @@ require "./transport"
 require "./command_processor"
 require "./installer"
 
-VERSION = {{ `git describe --tags --always`.chomp.stringify }}
+VERSION = "0.1.0"
 
 enum Subcommand
   RunServer
